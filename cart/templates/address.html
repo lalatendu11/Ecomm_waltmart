@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Header-->
+        <header class="bg-dark py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">Address</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">Enter Your Delivery Address...</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+        	<div class="row">
+        		<center>
+        			<div class="col-8">
+
+        				<br/><br/>
+<form method="POST" action="{% url 'success' %}">
+    {% csrf_token %}
+
+  <div class="mb-3">
+
+    <input type="text" class="form-control" name="name" placeholder="Enter Your Name">
+
+  </div>
+  <div class="mb-3">
+<input type="number" class="form-control" name="cont" placeholder="Enter Your Mobile No."><br>
+      <input type="text" class="form-control" name="gmail" placeholder="Enter Your Email"><br>
+    <input type="text" class="form-control" name="Add1" placeholder="Enter Your House No."><br>
+      <input type="text" class="form-control" name="Add2" placeholder="Enter Your City"><br>
+      <input type="number" class="form-control" name="pin" placeholder="Enter Your Pincode"><br>
+      <input type="text" class="form-control" name="Add4" placeholder="Enter Your State">
+  </div>
+  <br/>
+  <button type="submit" class="btn btn-dark">Place Order</button> <br><br>
+
+
+</form>
+
+
+<br/><br/>
+
+
+        			</div>
+        		</center>
+        	</div>
+        </div>
+
+{% endblock %}

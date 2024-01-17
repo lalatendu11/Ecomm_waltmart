@@ -1,0 +1,21 @@
+CONTEXT PROCESSOR ==>>
+
+# Create context processor so our cart can work on all pages of the site
+def cart(request):
+	# Return the default data from our Cart
+	return {'cart': Cart(request)}
+
+
+# Database
+# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME":"lalatendu$default" ,
+        "USER":"lalatendu" ,
+        "PASSWORD":"kanha1234"  ,
+        "HOST": "lalatendu.mysql.pythonanywhere-services.com" ,
+        "PORT": "" ,
+    }
+}

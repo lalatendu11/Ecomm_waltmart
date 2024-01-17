@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<!-- Header-->
+        <header class="bg-dark py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">Checkout</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">Here we are Ready to Go...</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="container">
+        	<div class="row">
+        		<center>
+        			<div class="col-8">
+
+        				<br/><br/>
+<form method="POST" action="{% url 'address' %}">
+    {% csrf_token %}
+    <h4>Total Paying Amount:Total: ₹{{ totals }}</h4>
+
+  <div class="mb-3">
+
+
+<h6>Choose a payment Method:</h6>
+<select class="form-control" name="payment" id="payment">
+  <option value="COD">Cash On Delivery(Cash/UPI)</option>
+  <option value="NB">Net Banking</option>
+  <option value="UPI">PhonePe/Google Pay/BHIM UPI</option>
+  <option value="EMI">EMI</option>
+</select>
+  </div>
+  <div class="mb-3">
+
+
+  </div>
+
+
+  <br/><br/>
+  <button type="submit" class="btn btn-dark">Place Order</button> <br><br>
+
+
+
+</form>
+
+
+<br/><br/>
+<br/><br/>
+
+
+        			</div>
+        		</center>
+        	</div>
+        </div>
+
+
+{% endblock %}
